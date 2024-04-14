@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest # run on this computer (latest version of ubuntu)
     steps:
       - uses: actions/checkout@v2 # an existing action defined by github
+      - name: "install pip"
+        run: python3 -m pip install --upgrade pip
+      - name: "install dependencies"
+        run: pip install -r requirements.txt
       - name: test codebase # name of the job
         run: pytest # command to run
